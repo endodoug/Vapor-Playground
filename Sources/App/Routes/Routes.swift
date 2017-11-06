@@ -19,6 +19,12 @@ extension Droplet {
         }
 
         get("description") { req in return req.description }
+      
+      get("myJson") { req in
+        var json = JSON()
+        try json.set("title", "This is my title😀")
+        return json
+      }
         
         try resource("posts", PostController.self)
     }
